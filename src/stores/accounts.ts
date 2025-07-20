@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import type { Account } from '../types/account'; // Импорт интерфейса
+import type { Account } from '../types/account';
 
 export const useAccountStore = defineStore('accounts', () => {
   const accounts = ref<Account[]>([]);
@@ -16,9 +16,11 @@ export const useAccountStore = defineStore('accounts', () => {
     localStorage.setItem('accounts', JSON.stringify(accounts.value));
   };
 
+  const generateId = () => Math.random().toString(36).substr(2, 9);
+
   const addAccount = () => {
     accounts.value.push({
-      id: crypto.randomUUID(),
+      id: generateId(),
       labels: [],
       type: 'Local',
       login: '',
@@ -28,7 +30,9 @@ export const useAccountStore = defineStore('accounts', () => {
   };
 
   const removeAccount = (id: string) => {
+    console.log('Before removal, accounts:', accounts.value); // Отладочный лог
     accounts.value = accounts.value.filter((account) => account.id !== id);
+    console.log('After removal, accounts:', accounts.value); // Отладочный лог
     saveToStorage();
   };
 

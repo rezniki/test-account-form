@@ -113,6 +113,7 @@ const handleTypeChange = () => {
 
 // Удаление записи
 const removeAccount = () => {
+    console.log('Removing account with id:', props.account.id);
     store.removeAccount(props.account.id);
 };
 
