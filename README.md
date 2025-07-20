@@ -1,5 +1,21 @@
-# Vue 3 + TypeScript + Vite
+# Тестовое задание: Форма управления учетными записями
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Описание
+Форма для управления учетными записями, реализованная на Vue.js 3 (Composition API), TypeScript, Pinia и Vuetify. Поддерживает добавление, удаление, валидацию и сохранение записей.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Установка
+1. Склонируйте репозиторий: `git clone <ссылка>`
+2. Установите зависимости: `npm install`
+3. Запустите проект: `npm run dev`
+
+## Технологии
+- Vue.js 3 (Composition API)
+- TypeScript
+- Pinia
+- Vuetify
+
+## Функционал
+- Добавление учетных записей.
+- Валидация полей (логин, пароль для локальных записей).
+- Преобразование меток в массив объектов.
+- Сохранение данных в localStorage.
