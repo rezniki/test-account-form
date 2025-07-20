@@ -1,3 +1,4 @@
+<!-- src/components/AccountItem.vue -->
 <template>
     <v-row align="center">
         <v-col cols="3">
@@ -45,15 +46,10 @@
 <script setup lang="ts">
 import { ref, reactive, watch } from 'vue';
 import { useAccountStore } from '../stores/accounts';
+import type { Account } from '../types/account'; // Импорт интерфейса
 
 const props = defineProps<{
-    account: {
-        id: string;
-        labels: { text: string }[];
-        type: 'LDAP' | 'Local';
-        login: string;
-        password: string | null;
-    };
+    account: Account; // Используем импортированный интерфейс
 }>();
 
 const store = useAccountStore();
